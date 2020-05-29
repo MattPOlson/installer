@@ -14,7 +14,7 @@ vsphere_server = "10.6.202.13"
 vsphere_user = "administrator@bdlab.local"
 
 // Password of the user on the vSphere server.
-vsphere_password = "BdL@bd0main2"
+vsphere_password = "******"
 
 // Name of the vSphere cluster. The dev cluster is "devel".
 vsphere_cluster = "JX2LESX"
