@@ -149,5 +149,5 @@ variable "compute_memory" {
 
 variable "compute_num_cpus" {
   type = "string"
-  default = "4"
+  default = "2"
 }

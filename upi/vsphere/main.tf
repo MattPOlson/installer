@@ -27,7 +27,7 @@ module "resource_pool" {
 module "bootstrap" {
   source = "./machine"
 
-  name             = "bootstrap"
+  name             = "YKTDOBN"
   instance_count   = "${var.bootstrap_complete ? 0 : 1}"
   ignition_url     = "${var.bootstrap_ignition_url}"
   resource_pool_id = "${module.resource_pool.pool_id}"
@@ -41,14 +41,14 @@ module "bootstrap" {
   ipam_token       = "${var.ipam_token}"
   ip_addresses     = ["${compact(list(var.bootstrap_ip))}"]
   machine_cidr     = "${var.machine_cidr}"
-  memory           = "8192"
+  memory           = "16384"
   num_cpu          = "4"
 }
 
 module "control_plane" {
   source = "./machine"
 
-  name             = "yktlocp"
+  name             = "YKTDOMN"
   instance_count   = "${var.control_plane_count}"
   ignition         = "${var.control_plane_ignition}"
   resource_pool_id = "${module.resource_pool.pool_id}"
@@ -69,7 +69,7 @@ module "control_plane" {
 module "compute" {
   source = "./machine"
 
-  name             = "yktlowk"
+  name             = "YKTDOWN"
   instance_count   = "${var.compute_count}"
   ignition         = "${var.compute_ignition}"
   resource_pool_id = "${module.resource_pool.pool_id}"
